@@ -20,7 +20,7 @@ module.exports = {
         historyApiFallback: true
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'react',
             template: "./index.html"

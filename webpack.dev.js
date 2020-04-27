@@ -8,6 +8,10 @@ module.exports = merge(webpackConfig, {
     output: {
         path: path.join(__dirname, './dist'),
         filename: 'bundle.js',
-        publicPath: '/'
+        publicPath: '/',
+        publicPath: '/assets/', // 相对于服务(server-relative)
+        publicPath: 'assets/images', // 相对于 HTML 页面
+        publicPath: '../assets/images', // 相对于 HTML 页面
+        publicPath: '', // 相对于 HTML 页面（目录相同）
     }
 })

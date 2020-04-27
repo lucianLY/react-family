@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUserInfo } from "../../redux/actions/useInfo"
-import "./UserInfo.css"
+import "./UserInfo.scss"
 
 class UserInfo extends Component {
 

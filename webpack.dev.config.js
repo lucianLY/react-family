@@ -28,7 +28,8 @@ module.exports = {
     ],
     resolve:{
         alias:{
-            component: path.join(__dirname, 'src/component')
+            component: path.join(__dirname, 'src/component'),
+            // redux: path.join(__dirname, "src/redux")
         }
     },
     module:{

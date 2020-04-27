@@ -1,4 +1,4 @@
-import {INCREMENT, DECREMENT, RESET } from " ../actions/counter"
+import {INCREMENT, DECREMENT, RESET } from "../actions/counter"
 
 /**
  * 初始化
@@ -25,6 +25,6 @@ export default function reducer (state = initState, action) {
                 count: 0
             }    
         default:
-            break;
+            return state
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUserInfo } from "../../redux/actions/useInfo"
+import "./UserInfo.css"
 
 class UserInfo extends Component {
 
@@ -13,7 +14,7 @@ class UserInfo extends Component {
                     isLoadding ? "请求信息中。。。。。":
                     (
                         errorMsg ? errorMsg: 
-                        <div>
+                        <div className="userinfo">
                             <p>用户信息：</p>
                             <p>用户名：{userInfo.name} </p>
                             <p>介绍：{userInfo.intro}</p>

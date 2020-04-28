@@ -14,7 +14,7 @@ export default class Navigation extends Component {
                 <div className="banner">
                     <div className="nav">
 
-                        <div className="item">签证</div>
+                        <div className="item"><Link to='./visa'>签证</Link></div>
                         <div className="item">线路</div>
                         <div className="item">首页</div>
         

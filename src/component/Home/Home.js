@@ -1,5 +1,7 @@
 import React , { Component } from "react"
 import Navigation from "../Navigation/Navigation"
+import { connect } from 'react-redux'
+import { getVisaList } from "../../redux/actions/visa"
 import "./home.scss"
 
 export default  class Home extends Component {
@@ -8,10 +10,10 @@ export default  class Home extends Component {
         super(props);
         this.state = {
             guides: [
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'}
+                {'title': '日本', 'text': '日本签证信息。。', 'pic' : 'hot.png'},
+                {'title': '韩国', 'text': '韩国签证信息。。', 'pic' : 'hot.png'},
+                {'title': '新加坡', 'text': '新加坡签证信息。。', 'pic' : 'hot.png'},
+                {'title': '泰国', 'text': '泰国签证信息。。', 'pic' : 'hot.png'}
             ],
             travel:[
                 {'title': '标题', 'pic' : 'hot.png'},
@@ -21,6 +23,11 @@ export default  class Home extends Component {
                 {'title': '标题', 'pic' : 'hot.png'},
             ]
         }
+    }
+
+    componentDidMount() {
+        console.log('第一次渲染之后 函数中发送ajax请求，拿到数据，通过setState()保存在state中')
+        // this.props.getVisaList() 
     }
 
     view(index){
@@ -62,10 +69,10 @@ export default  class Home extends Component {
                                             <img src={require("./images/" + item.pic)} />
                                         </div>
                                         <div className="title">
-                                            标题
+                                            { item.title }
                                         </div>
                                         <div className="main">
-                                            内容内容~~~~~
+                                            { item.text }
                                         </div>
                                         <div className="view" onClick={this.view.bind(index)}>
                                             去看看

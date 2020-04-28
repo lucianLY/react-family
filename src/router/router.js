@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
+import "./init.scss"
 import Home from "component/Home/Home"
 // import VISA from "component/Visa/Index"
 // import Counter from "component/Counter/Counter"
@@ -9,12 +10,6 @@ import Home from "component/Home/Home"
 const AppRouter = () => (
     <div>
         <Router>
-            {/* <ul>
-                <li><Link to='/'>首页</Link></li>
-                <li><Link to='/visa'>VISA</Link></li>
-                <li><Link to='/counter'>Counter</Link></li>
-                <li><Link to='/userInfo'>UserInfo</Link></li>
-            </ul> */}
             <Switch>
                 <Route exact path="/" component={Home} />
                 {/* <Route path="/visa" component={VISA} />

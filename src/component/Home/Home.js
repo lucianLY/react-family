@@ -1,4 +1,5 @@
 import React , { Component } from "react"
+import Navigation from "../Navigation/Navigation"
 import "./home.scss"
 
 export default  class Home extends Component {
@@ -30,27 +31,7 @@ export default  class Home extends Component {
         return (
             <div className='main'>
                 <div className='header'>
-                    <div className="header-layer">
-                        <div className='welcome'>
-                            <div className='logo'>
-                                LOGO 
-                            </div>
-                        </div>
-                        <div className="banner">
-                        <div className="nav">
-                            <div className="item">首页</div>
-                            <div className="item">攻略</div>
-                            <div className="item">故事</div>
-                            <div className="item">结伴</div>
-                            <div className="item">酒店</div>
-            
-                            <div className="item private">私人规划</div>
-                            <div className="item-btn">登入</div>
-                            <div className="item-btn active">注册</div>
-                        </div>
-                        {/* <div className="search">搜索</div> */}
-                    </div>
-                    </div>
+                    <Navigation />
                     <div className="header-body">
                         <div className="travel-title">
                             我们一起去旅行菲律宾

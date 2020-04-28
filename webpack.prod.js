@@ -1,7 +1,7 @@
 const path = require('path')
 const merge = require('webpack-merge')
-const webpackConfig = require("./webpack.common.config")
-const UglighJSPlugin = require("uglifyjs-webpack-plugin")
+const webpackConfig = require('./webpack.common.config')
+const UglighJSPlugin = require('uglifyjs-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = merge(webpackConfig, {
@@ -14,7 +14,7 @@ module.exports = merge(webpackConfig, {
         publicPath: '/'
     },
     plugins: [
-        new UglighJSPlugin(),
-        new CleanWebpackPlugin()
-    ]
+        new CleanWebpackPlugin(),
+        new UglighJSPlugin()
+    ],
 })

@@ -1,7 +1,6 @@
 import React , { Component } from "react"
 import Navigation from "../Navigation/Navigation"
-import { connect } from 'react-redux'
-import { getVisaList } from "../../redux/actions/visa"
+import VisaList from "./visaList"
 import "./home.scss"
 
 export default  class Home extends Component {
@@ -52,37 +51,7 @@ export default  class Home extends Component {
                     </div>
                 </div>
                 <div className="body">
-                    <div className="hot">
-                        <div className='raiders'>
-                            热门旅游攻略
-                        </div>
-                        <div className='sub'>
-                            HOT TRAVEL GUIDES
-                        </div>
-                        <div className="line"></div>
-                        <div className='hot-map'>
-                            {
-                                this.state.guides.map( (item, index) => {
-                                    return (
-                                    <div className='item' key={index} >
-                                        <div className="img">
-                                            <img src={require("./images/" + item.pic)} />
-                                        </div>
-                                        <div className="title">
-                                            { item.title }
-                                        </div>
-                                        <div className="main">
-                                            { item.text }
-                                        </div>
-                                        <div className="view" onClick={this.view.bind(index)}>
-                                            去看看
-                                        </div>
-                                    </div>
-                                )
-                                })
-                            }
-                        </div>
-                    </div>
+                    <VisaList />
                     <div className="hot">
                         <div className='raiders'>
                             热门民宿推荐

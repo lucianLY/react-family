@@ -1,6 +1,6 @@
 import React , { Component } from "react"
 import Navigation from "../Navigation/Navigation"
-import VisaList from "./visaList"
+import Item from "./itemList"
 import "./home.scss"
 
 export default  class Home extends Component {
@@ -8,12 +8,6 @@ export default  class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            guides: [
-                {'title': '日本', 'text': '日本签证信息。。', 'pic' : 'hot.png'},
-                {'title': '韩国', 'text': '韩国签证信息。。', 'pic' : 'hot.png'},
-                {'title': '新加坡', 'text': '新加坡签证信息。。', 'pic' : 'hot.png'},
-                {'title': '泰国', 'text': '泰国签证信息。。', 'pic' : 'hot.png'}
-            ],
             travel:[
                 {'title': '标题', 'pic' : 'hot.png'},
                 {'title': '标题', 'pic' : 'hot.png'},
@@ -51,7 +45,17 @@ export default  class Home extends Component {
                     </div>
                 </div>
                 <div className="body">
-                    <VisaList />
+                    <div className="hot">
+                        <div className='raiders'>
+                            热门签证攻略
+                        </div>
+                        <div className='sub'>
+                            HOT VISA GUIDES
+                        </div>
+                        <div className="line"></div>
+                        <Item raiders="热门签证攻略" description="HOT VISA GUIDES" name="hot-map" />
+                    </div>
+                    
                     <div className="hot">
                         <div className='raiders'>
                             热门民宿推荐

@@ -6,12 +6,6 @@ class visaList extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            guides: [
-                {'title': '日本', 'text': '日本签证信息。。', 'pic' : 'hot.png'},
-                {'title': '韩国', 'text': '韩国签证信息。。', 'pic' : 'hot.png'},
-                {'title': '新加坡', 'text': '新加坡签证信息。。', 'pic' : 'hot.png'},
-                {'title': '泰国', 'text': '泰国签证信息。。', 'pic' : 'hot.png'}
-            ],
             travel:[
                 {'title': '标题', 'pic' : 'hot.png'},
                 {'title': '标题', 'pic' : 'hot.png'},
@@ -33,38 +27,31 @@ class visaList extends Component{
     render (){
         let len = this.props.visaList.length
         return (
-            <div className="hot">
-                <div className='raiders'>
-                    热门签证攻略
-                </div>
-                <div className='sub'>
-                    HOT VISA GUIDES
-                </div>
-                <div className="line"></div>
+            <div>
                 {
                     len !== undefined ? (
-                        <div className='hot-map'>
-                    {
-                        this.props.visaList.map( (item, index) => {
-                            return (
-                            <div className='item' key={index} >
-                                <div className="img">
-                                    <img src={require("./images/" + item.pic)} />
-                                </div>
-                                <div className="title">
-                                    { item.title }
-                                </div>
-                                <div className="main">
-                                    { item.text }
-                                </div>
-                                <div className="view" onClick={this.view.bind(index)}>
-                                    去看看
-                                </div>
-                            </div>
-                        )
-                        })
-                    }
-                </div>
+                        <div className={ this.props.name }>
+                            {
+                                this.props.visaList.map( (item, index) => {
+                                    return (
+                                    <div className='item' key={index} >
+                                        <div className="img">
+                                            <img src={require("./images/" + item.pic)} />
+                                        </div>
+                                        <div className="title">
+                                            { item.title }
+                                        </div>
+                                        <div className="main">
+                                            { item.text }
+                                        </div>
+                                        <div className="view" onClick={this.view.bind(index)}>
+                                            去看看
+                                        </div>
+                                    </div>
+                                )
+                                })
+                            }
+                        </div>
                     ): ('')
                 }
                 

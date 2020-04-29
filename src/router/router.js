@@ -1,14 +1,15 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { Provider } from "react-redux"
+import store from "../redux/store"
 
 import "./init.scss"
 import Home from "component/Home/Home"
 import VISA from "component/Visa/Index"
-// import Counter from "component/Counter/Counter"
-// import UserInfo from "component/UserInfo/UserInfo"
+
 
 const AppRouter = () => (
-    <div>
+    <Provider store = { store }>
         <Router>
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -17,7 +18,7 @@ const AppRouter = () => (
                 <Route path="/userInfo" component={UserInfo} /> */}
             </Switch>
         </Router>
-    </div>
+    </Provider>
 )
 
 export default AppRouter

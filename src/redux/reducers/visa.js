@@ -3,7 +3,7 @@ import { GET_VISA_REQUEST, GET_VISA_SUCCESS, GET_VISA_FAIL } from "../actions/vi
 const initState = {
     isLoading: false,
     visaList: {},
-    errorMsg: ''
+    success: ''
 }
 
 export default function reducer ( state = initState, action ) {
@@ -13,7 +13,7 @@ export default function reducer ( state = initState, action ) {
             return {
                 ...state,
                 isLoading: true,
-                errorMsg: ''
+                success: false
             }
             break;
         case GET_VISA_SUCCESS:
@@ -21,14 +21,14 @@ export default function reducer ( state = initState, action ) {
                 ...state,
                 isLoading: false,
                 visaList: action.visaList,
-                errorMsg: ''
+                success: true
             }
             break;
         case GET_VISA_FAIL:
             return {
                 ...state,
                 isLoading: false,
-                errorMsg: '请求失败'
+                success: false
             }
             break;
         default:

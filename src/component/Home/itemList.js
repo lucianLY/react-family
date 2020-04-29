@@ -24,38 +24,34 @@ class visaList extends Component{
         console.log('On click view' + index )
     }
 
-    render (){
-        let len = this.props.visaList.length
+    render () {
+        let { visaList, success } = this.props
+    
         return (
-            <div>
-                {
-                    len !== undefined ? (
-                        <div className={ this.props.name }>
-                            {
-                                this.props.visaList.map( (item, index) => {
-                                    return (
-                                    <div className='item' key={index} >
-                                        <div className="img">
-                                            <img src={require("./images/" + item.pic)} />
-                                        </div>
-                                        <div className="title">
-                                            { item.title }
-                                        </div>
-                                        <div className="main">
-                                            { item.text }
-                                        </div>
-                                        <div className="view" onClick={this.view.bind(index)}>
-                                            去看看
-                                        </div>
-                                    </div>
-                                )
-                                })
-                            }
+            success === true  ? (
+                <div className={ this.props.name }>
+                    {
+                        visaList.map( (item, index) => {
+                            return (
+                            <div className='item' key={index} >
+                                <div className="img">
+                                    <img src={require("./images/" + item.pic)} />
+                                </div>
+                                <div className="title">
+                                    { item.title }
+                                </div>
+                                <div className="main">
+                                    { item.text }
+                                </div>
+                                <div className="view" onClick={this.view.bind(index)}>
+                                    去看看
+                                </div>
+                            </div>
+                        )
+                        })
+                    }
                         </div>
-                    ): ('')
-                }
-                
-            </div>
+            ):('')
         )
     }
 }

@@ -1,0 +1,8 @@
+{
+    "visa": [
+        {"title": "日本", "text": "日本签证信息。。", "pic" : "hot.png"},
+        {"title": "韩国", "text": "韩国签证信息。。", "pic" : "hot.png"},
+        {"title": "新加坡", "text": "新加坡签证信息。。", "pic" : "hot.png"},
+        {"title": "泰国", "text": "泰国签证信息。。", "pic" : "hot.png"}
+    ]
+}

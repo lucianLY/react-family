@@ -23,8 +23,7 @@ class visaList extends Component{
     }
 
     componentDidMount() {
-        console.log('第一次渲染之后 函数中发送ajax请求，拿到数据，通过setState()保存在state中')
-        this.props.getVisaList() 
+        this.props.getVisaList()
     }
 
     view(index){
@@ -34,36 +33,36 @@ class visaList extends Component{
     render (){
         return (
             <div className="hot">
-                        <div className='raiders'>
-                            热门旅游攻略
-                        </div>
-                        <div className='sub'>
-                            HOT TRAVEL GUIDES
-                        </div>
-                        <div className="line"></div>
-                        <div className='hot-map'>
-                            {
-                                this.state.guides.map( (item, index) => {
-                                    return (
-                                    <div className='item' key={index} >
-                                        <div className="img">
-                                            <img src={require("./images/" + item.pic)} />
-                                        </div>
-                                        <div className="title">
-                                            { item.title }
-                                        </div>
-                                        <div className="main">
-                                            { item.text }
-                                        </div>
-                                        <div className="view" onClick={this.view.bind(index)}>
-                                            去看看
-                                        </div>
-                                    </div>
-                                )
-                                })
-                            }
-                        </div>
-                    </div>
+                <div className='raiders'>
+                    热门旅游攻略
+                </div>
+                <div className='sub'>
+                    HOT TRAVEL GUIDES
+                </div>
+                <div className="line"></div>
+                <div className='hot-map'>
+                    {
+                        this.state.guides.map( (item, index) => {
+                            return (
+                            <div className='item' key={index} >
+                                <div className="img">
+                                    <img src={require("./images/" + item.pic)} />
+                                </div>
+                                <div className="title">
+                                    { item.title }
+                                </div>
+                                <div className="main">
+                                    { item.text }
+                                </div>
+                                <div className="view" onClick={this.view.bind(index)}>
+                                    去看看
+                                </div>
+                            </div>
+                        )
+                        })
+                    }
+                </div>
+            </div>
         )
     }
 }

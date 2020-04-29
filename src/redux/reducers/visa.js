@@ -7,6 +7,7 @@ const initState = {
 }
 
 export default function reducer ( state = initState, action ) {
+    
     switch ( action.type ) {
         case GET_VISA_REQUEST:
             return {

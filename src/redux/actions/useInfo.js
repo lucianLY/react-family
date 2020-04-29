@@ -22,7 +22,7 @@ function getUserInfoFail (){
 }
 
 export function getUserInfo() {
-    return function (dispatch) {
+    return dispatch => {
         dispatch( getUserInfoRequest() )
 
         return fetch("http://localhost:8080/api/user.json")

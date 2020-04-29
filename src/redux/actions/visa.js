@@ -1,25 +1,19 @@
-export const GET_VISA_REQUEST = 'visaList/GET_VISA_REQUEST'
-export const GET_VISA_SUCCESS = 'visaList/GET_VISA_SUCCESS'
-export const GET_VISA_FAIL = 'visaList/GET_VISA_REQUEST'
+export const GET_VISA_REQUEST = 'GET_VISA_REQUEST'
+export const GET_VISA_SUCCESS = 'GET_VISA_SUCCESS'
+export const GET_VISA_FAIL = 'GET_VISA_REQUEST'
 
-function  getVisaListRequest () {
-    return {
-        type: GET_VISA_REQUEST
-    }
-}
+let getVisaListRequest = () => ({
+    type: GET_VISA_REQUEST
+})
 
-function  getVisaListSuccess (list) {
-    return {
-        type: GET_VISA_SUCCESS,
-        visaList: list
-    }
-}
+let getVisaListSuccess = list => ({
+    type: GET_VISA_SUCCESS,
+    visaList: list
+})
 
-function  getVisaListFail () {
-    return {
-        type: GET_VISA_FAIL
-    }
-}
+let getVisaListFail = () => ({
+    type: GET_VISA_FAIL
+})
 
 
 export function getVisaList(){

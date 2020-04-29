@@ -13,7 +13,6 @@ export default function reducer ( state = initState, action ) {
             return {
                 ...state,
                 isLoading: true,
-                visaList: {},
                 errorMsg: ''
             }
             break;
@@ -29,7 +28,6 @@ export default function reducer ( state = initState, action ) {
             return {
                 ...state,
                 isLoading: false,
-                visaList: {},
                 errorMsg: '请求失败'
             }
             break;

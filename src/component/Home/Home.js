@@ -25,7 +25,7 @@ export default  class Home extends Component {
     }
 
     componentDidMount() {
-        console.log('第一次渲染之后 函数中发送ajax请求，拿到数据，通过setState()保存在state中')
+        // console.log('第一次渲染之后 函数中发送ajax请求，拿到数据，通过setState()保存在state中')
         // this.props.getVisaList() 
     }
 

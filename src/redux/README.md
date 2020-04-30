@@ -1,4 +1,4 @@
- ### HOC 高阶组件
+ ### Redux-connect 高阶组件
 
     Redux的connect负责把 React组件和Redux中的store链接起来
     connect([mapStateToProps],[mapDispatchToProps],[mergeProps],[options])

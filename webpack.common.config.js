@@ -20,6 +20,7 @@ module.exports = {
     ],
     resolve:{
         alias:{
+            view: path.join(__dirname, 'src/view'),
             component: path.join(__dirname, 'src/component')
         }
     },

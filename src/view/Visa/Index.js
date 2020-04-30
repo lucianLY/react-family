@@ -1,5 +1,5 @@
 import React , { Component } from "react"
-import BackHome from "../../component/BackHome"
+import BackHome from "component/BackHome"
 
 export default  class VISA extends Component {
     render () {

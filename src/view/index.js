@@ -1,8 +1,36 @@
-import Counter from './Counter/Counter'
-import Home from './Home/Home'
-import Navigtion from './Navigation/Navigation'
-import UserInfo from './UserInfo/UserInfo'
-import Visa from './Visa/Index'
+import Loadbble from "react-loadable"
+import Loading from "component/Loading"
+
+const Counter = Loadbble({
+    loader: () => import('./Counter/Counter'),
+    loading: Loading,
+    delay: 300
+})
+
+const Home = Loadbble({
+    loader: () => import('./Home/Home'),
+    loading: Loading,
+    delay: 300,
+    timeout: 10000,
+})
+
+const UserInfo = Loadbble({
+    loader: () => import('./UserInfo/UserInfo'),
+    loading: Loading,
+    delay: 300
+})
+
+const Visa = Loadbble({
+    loader: () => import('./Visa/Index'),
+    loading: Loading,
+    delay: 300
+})
+
+const Navigtion = Loadbble({
+    loader: () => import('./Navigation/Navigation'),
+    loading: Loading,
+    delay: 300
+})
 
 export {
     Counter, Home, Navigtion, UserInfo, Visa

@@ -26,31 +26,35 @@ class visaList extends Component{
 
     render () {
         let { visaList, success } = this.props
-    
         return (
             success === true  ? (
                 <div className={ this.props.name }>
                     {
                         visaList.map( (item, index) => {
                             return (
-                            <div className='item' key={index} >
-                                <div className="img">
-                                    <img src={require("./images/" + item.pic)} />
+                                <div className='item' key={index} >
+                                    <div className="img">
+                                        <img src={require("./images/" + item.pic)} />
+                                    </div>
+                                    <div className="title">
+                                        { item.country }
+                                    </div>
+                                    <div className="main">
+                                        { item.title }
+                                        【
+                                        <span className='price'>
+                                        { item.price }₱
+                                        </span>
+                                        】
+                                    </div>
+                                    <div className="view" onClick={this.view.bind(index)}>
+                                        去看看
+                                    </div>
                                 </div>
-                                <div className="title">
-                                    { item.title }
-                                </div>
-                                <div className="main">
-                                    { item.text }
-                                </div>
-                                <div className="view" onClick={this.view.bind(index)}>
-                                    去看看
-                                </div>
-                            </div>
-                        )
+                            )
                         })
                     }
-                        </div>
+                </div>
             ):('')
         )
     }

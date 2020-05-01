@@ -1,8 +1,8 @@
 {
     "visa": [
-        {"title": "日本", "text": "日本签证信息。。", "pic" : "hot.png"},
-        {"title": "韩国", "text": "韩国签证信息。。", "pic" : "hot.png"},
-        {"title": "新加坡", "text": "新加坡签证信息。。", "pic" : "hot.png"},
-        {"title": "泰国", "text": "泰国签证信息。。", "pic" : "hot.png"}
+        {"country": "日本", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "jp.jpg", "price": 1000},
+        {"country": "韩国", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "kr.jpg", "price": 1000},
+        {"country": "新加坡", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "sg.jpg", "price": 1000},
+        {"country": "泰国", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "th.jpg", "price": 1000}
     ]
 }

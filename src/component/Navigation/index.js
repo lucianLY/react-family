@@ -1,6 +1,6 @@
 import React , { Component } from "react"
 import { Link } from 'react-router-dom'
-import "./navigation.scss"
+import "./index.scss"
 
 export default class Navigation extends Component {
     render () {

@@ -1,5 +1,5 @@
 import React , { Component } from "react"
-import Navigation from "../Navigation/Navigation"
+import Navigation from "component/Navigation"
 import Item from "./itemList"
 import "./home.scss"
 
@@ -53,7 +53,7 @@ export default  class Home extends Component {
                             HOT VISA GUIDES
                         </div>
                         <div className="line"></div>
-                        <Item raiders="热门签证攻略" description="HOT VISA GUIDES" name="hot-map" />
+                        <Item raiders="热门签证攻略" description="HOT VISA GUIDES" name="hot-travel-map" />
                     </div>
                     
                     <div className="hot">

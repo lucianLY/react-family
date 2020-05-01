@@ -20,7 +20,7 @@ class visaList extends Component{
         this.props.getVisaList()
     }
 
-    view(index){
+    apply(index){
         console.log('On click view' + index )
     }
 
@@ -41,14 +41,9 @@ class visaList extends Component{
                                     </div>
                                     <div className="main">
                                         { item.title }
-                                        【
-                                        <span className='price'>
-                                        { item.price }₱
-                                        </span>
-                                        】
                                     </div>
-                                    <div className="view" onClick={this.view.bind(index)}>
-                                        去看看
+                                    <div className="view" onClick={this.apply.bind(index)}>
+                                        去申请
                                     </div>
                                 </div>
                             )

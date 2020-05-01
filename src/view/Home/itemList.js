@@ -5,23 +5,14 @@ import { getVisaList } from "../../redux/actions/visa"
 class visaList extends Component{
     constructor(props) {
         super(props);
+        
         this.state = {
-            travel:[
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-            ]
+            showApply: false
         }
     }
 
     componentDidMount() {
         this.props.getVisaList()
-    }
-
-    apply(index){
-        console.log('On click view' + index )
     }
 
     render () {
@@ -42,7 +33,7 @@ class visaList extends Component{
                                     <div className="main">
                                         { item.title }
                                     </div>
-                                    <div className="view" onClick={this.apply.bind(index)}>
+                                    <div className="view" onClick={ ()=> {this.props.getFun(item.country)} }>
                                         去申请
                                     </div>
                                 </div>

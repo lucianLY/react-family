@@ -1,13 +1,16 @@
 import React , { Component } from "react"
 import Navigation from "component/Navigation"
 import Item from "./itemList"
+import Bulletbox from "component/Bulletbox"
 import "./home.scss"
 
 export default  class Home extends Component {
 
     constructor(props) {
         super(props);
+        this.fun=this.fun.bind(this);
         this.state = {
+            showApply: false,
             travel:[
                 {'title': '标题', 'pic' : 'hot.png'},
                 {'title': '标题', 'pic' : 'hot.png'},
@@ -23,15 +26,23 @@ export default  class Home extends Component {
         // this.props.getVisaList() 
     }
 
+    fun( name ){
+        console.log('你调用了父组件的方法' + name)
+        this.setState({
+            showApply: true
+        })
+    }
+
     view(index){
-        console.log('On click view' + index )
+        this.showApply = true
+        console.log(this.showApply)
     }
 
     render () {
         return (
             <div className='main'>
                 <div className='header'>
-                    <Navigation />
+                    <Navigation name='ree'/>
                     <div className="header-body">
                         <div className="travel-title">
                             我们一起去旅行菲律宾
@@ -53,7 +64,7 @@ export default  class Home extends Component {
                             HOT VISA GUIDES
                         </div>
                         <div className="line"></div>
-                        <Item raiders="热门签证攻略" description="HOT VISA GUIDES" name="hot-travel-map" />
+                        <Item raiders="热门签证攻略"  getFun={this.fun} description="HOT VISA GUIDES" name="hot-travel-map" />
                     </div>
                     
                     <div className="hot">
@@ -125,6 +136,7 @@ export default  class Home extends Component {
                         </div>
                     </div>
                 </div>
+                <Bulletbox type={ this.state.showApply }/>
             </div>
         )
     }

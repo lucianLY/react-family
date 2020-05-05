@@ -74,7 +74,7 @@ export default class Bulletbox extends Component {
                             </table>
                         </div>
                         <div className="edit-row">
-                            <div className="cancel">取消</div>
+                            <div className="cancel" onClick={ ()=> {this.props.closeProp()} }>取消</div>
                             <div className="apply">申请</div>
                         </div>
                     </div>

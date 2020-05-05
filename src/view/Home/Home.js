@@ -8,7 +8,8 @@ export default  class Home extends Component {
 
     constructor(props) {
         super(props);
-        this.fun=this.fun.bind(this);
+        this.openProp = this.openProp.bind(this);
+        this.closeProp = this.closeProp.bind(this);
         this.state = {
             showApply: false,
             travel:[
@@ -26,10 +27,16 @@ export default  class Home extends Component {
         // this.props.getVisaList() 
     }
 
-    fun( name ){
+    openProp( name ){
         console.log('你调用了父组件的方法' + name)
         this.setState({
             showApply: true
+        })
+    }
+
+    closeProp() {
+        this.setState({
+            showApply: false
         })
     }
 
@@ -64,7 +71,7 @@ export default  class Home extends Component {
                             HOT VISA GUIDES
                         </div>
                         <div className="line"></div>
-                        <Item raiders="热门签证攻略"  getFun={this.fun} description="HOT VISA GUIDES" name="hot-travel-map" />
+                        <Item raiders="热门签证攻略"  fromItem = {this.openProp} description="HOT VISA GUIDES" name="hot-travel-map" />
                     </div>
                     
                     <div className="hot">
@@ -136,7 +143,7 @@ export default  class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <Bulletbox type={ this.state.showApply }/>
+                <Bulletbox type={ this.state.showApply } closeProp = {this.closeProp} />
             </div>
         )
     }

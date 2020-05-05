@@ -33,7 +33,7 @@ class visaList extends Component{
                                     <div className="main">
                                         { item.title }
                                     </div>
-                                    <div className="view" onClick={ ()=> {this.props.getFun(item.country)} }>
+                                    <div className="view" onClick={ ()=> {this.props.fromItem(item.country)} }>
                                         去申请
                                     </div>
                                 </div>

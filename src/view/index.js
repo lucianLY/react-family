@@ -32,6 +32,11 @@ const Navigtion = Loadbble({
     delay: 300
 })
 
+const AdminLogin = Loadbble({
+    loader: () => import('./Admin/login'),
+    loading: Loading,
+    delay: 300
+})
 export {
-    Counter, Home, Navigtion, UserInfo, Visa
+    Counter, Home, Navigtion, UserInfo, Visa, AdminLogin
 }

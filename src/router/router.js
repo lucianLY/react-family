@@ -1,4 +1,4 @@
-import { Counter, Home, Visa } from '../view'
+import { Counter, Home, Visa, AdminLogin } from '../view'
 
 export  const  mainRouter = [
     {
@@ -20,5 +20,10 @@ export  const  mainRouter = [
         pathname: '/counter',
         exact: false,
         component: Counter
-    }
+    },
+    {
+        pathname: '/login',
+        exact: false,
+        component: AdminLogin
+    },
 ]

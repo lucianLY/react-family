@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "ts": "webpack-dev-server --open --config ./webpack.typescript.js",
     "dev": "webpack-dev-server --open --config webpack.dev.js --hot",
     "build": "webpack --config ./webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
     "antd": "^4.2.0",
     "mockjs": "^1.1.0"
   },

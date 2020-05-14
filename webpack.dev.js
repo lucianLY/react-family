@@ -1,6 +1,7 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const webpackConfig = require("./webpack.common.config")
+const webpack = require('webpack')
 
 module.exports = merge(webpackConfig, {
     mode: 'development',
@@ -13,5 +14,10 @@ module.exports = merge(webpackConfig, {
         publicPath: 'assets/images', // 相对于 HTML 页面
         publicPath: '../assets/images', // 相对于 HTML 页面
         publicPath: '', // 相对于 HTML 页面（目录相同）
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            MOCK: true
+        })
+    ]
 })

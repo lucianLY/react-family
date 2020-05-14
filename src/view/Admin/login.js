@@ -4,6 +4,11 @@ import { Form, Input, Button, CheckBox } from 'antd'
 
 export default class Login extends Component {
 
+    submit(e){
+        console.log('submit')
+        
+    }
+
     render () {
         const layout = {
             labelCol: { span: 4 },
@@ -13,8 +18,6 @@ export default class Login extends Component {
         const taiLayout = {
             wrapperCol: { offest: 4, span: 5}
         }
-
-
 
         return (
             <Form 
@@ -41,7 +44,9 @@ export default class Login extends Component {
                 <Form.Item
                     {...taiLayout}
                 >
-                    <Button type='primary' htmlType="submit">
+                    <Button 
+                        onClick = { () => { this.submit() }}
+                    type="primary" style={{ width: '100%' }} htmlType="submit">
                         登入
                     </Button>
                 </Form.Item>

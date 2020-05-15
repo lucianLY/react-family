@@ -1,6 +1,19 @@
 {
     "visa": [
-        {"country": "日本", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "jp.png", "price": 1000},
+        {
+            "country": "日本", 
+            "title": "个人旅游签证",
+            "territory": "菲律宾领区", 
+            "pic" : "jp.png",
+            "price": 1000,
+            "materials": {
+                "passport": [
+                    "1、行程结束后至少有6个月有效期",
+                    "2、至少有2页空白签证页(不含备注页)",
+                    "3、不接收6个月内有日本拒签记录的护照"
+                ]
+            }
+        },
         {"country": "韩国", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "kr.png", "price": 1000},
         {"country": "新加坡", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "sg.png", "price": 1000},
         {"country": "泰国", "title": "个人旅游签证", "territory": "菲律宾领区", "pic" : "th.png", "price": 1000},

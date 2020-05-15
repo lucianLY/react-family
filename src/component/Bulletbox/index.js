@@ -3,9 +3,23 @@ import "./index.scss"
 
 export default class Bulletbox extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
+    applyVisa(){
+        this.props.applyProps('日本')
+    }
+
     render () {
-        const type = this.props.type
-        console.log( type )
+        const {type, country} = this.props
+        const materials = this.props.materials
+        let passport = {}
+        if (materials.length > 0) {
+            passport = materials.materials.passport  
+            console.log( 'materials - ' + JSON.stringify(passport, 2) )
+        }
+
         return (
             <div className={"bullet-box " + (this.props.type === true? 'show' : 'none')}>
                 <div className='container'>
@@ -17,7 +31,7 @@ export default class Bulletbox extends Component {
                     <div className="visa-article">
                         <div className="visa-material">
                             <div className="title">
-                                日本旅游签证[菲律宾送签]·单次 
+                            {materials.country}旅游签证[菲律宾送签]·单次 
                             </div>
                             <table>
                                 <tbody>
@@ -30,9 +44,14 @@ export default class Bulletbox extends Component {
                                         <div className="info">
                                             <ul>
                                                 <li>需同时满足以下3点:</li>
-                                                <li>1、行程结束后至少有6个月有效期;</li>
-                                                <li>2、至少有2页空白签证页(不含备注页);</li>
-                                                <li>3、不接收6个月内有日本拒签记录的护照;</li>
+                                                { 
+                                                    // passport.map( ( item, index ) => {
+                                                    //     return (
+                                                    //         <li>{ item }</li>
+                                                    //     )
+                                                    // })
+                                                }
+                                                
                                             </ul>
                                         </div>
                                     </td>
@@ -75,7 +94,7 @@ export default class Bulletbox extends Component {
                         </div>
                         <div className="edit-row">
                             <div className="cancel" onClick={ ()=> {this.props.closeProp()} }>取消</div>
-                            <div className="apply">申请</div>
+                            <div className="apply" onClick={ () => { this.applyVisa() }}>申请</div>
                         </div>
                     </div>
                 </div>

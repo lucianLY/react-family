@@ -11,6 +11,7 @@ export default  class Home extends Component {
         this.openProp = this.openProp.bind(this);
         this.closeProp = this.closeProp.bind(this);
         this.state = {
+            materials: {},
             showApply: false,
             travel:[
                 {'title': '标题', 'pic' : 'hot.png'},
@@ -45,6 +46,14 @@ export default  class Home extends Component {
         console.log(this.showApply)
     }
 
+    apply( json ){
+        console.log( JSON.stringify(json , 2))
+        this.setState({
+            showApply: true,
+            materials: json
+        })
+    }
+
     render () {
         return (
             <div className='main'>
@@ -71,7 +80,11 @@ export default  class Home extends Component {
                             HOT VISA GUIDES
                         </div>
                         <div className="line"></div>
-                        <Item raiders="热门签证攻略"  fromItem = {this.openProp} description="HOT VISA GUIDES" name="hot-travel-map" />
+                        <Item raiders="热门签证攻略"
+                            fromItem = {this.openProp}
+                            applyProps = { this.apply.bind(this) }
+                            description="HOT VISA GUIDES"
+                            name="hot-travel-map" />
                     </div>
                     
                     <div className="hot">
@@ -143,7 +156,10 @@ export default  class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <Bulletbox type={ this.state.showApply } closeProp = {this.closeProp} />
+                <Bulletbox 
+                    materials = { this.state.materials }
+                    type={ this.state.showApply }
+                    closeProp = {this.closeProp} />
             </div>
         )
     }

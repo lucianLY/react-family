@@ -15,6 +15,12 @@ class visaList extends Component{
         this.props.getVisaList()
     }
 
+    apply( val ){
+        let { visaList, success } = this.props
+        let array = visaList.filter( item => item.country == val)[0]
+        this.props.applyProps( array )
+    }
+
     render () {
         let { visaList, success } = this.props
         return (
@@ -33,7 +39,7 @@ class visaList extends Component{
                                     <div className="main">
                                         { item.title }
                                     </div>
-                                    <div className="view" onClick={ ()=> {this.props.fromItem(item.country)} }>
+                                    <div className="view" onClick={ ()=> {this.apply(item.country)} }>
                                         去申请
                                     </div>
                                 </div>

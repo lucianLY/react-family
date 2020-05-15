@@ -9,7 +9,6 @@ export interface Props {
 export class Home extends React.Component<Props, {}> {
 
     getExclamationMarks (numChars: number){
-        
         return Array( numChars + 1).join('*')
     }
 
@@ -17,8 +16,8 @@ export class Home extends React.Component<Props, {}> {
         const { name, level} = this.props
 
         return (
-            <div>
-                <h1>This is from {name} and { this.getExclamationMarks(level) }</h1>
+            <div className='ttt'>
+                This is from {name} and { this.getExclamationMarks(level) }
             </div>
         )
     }

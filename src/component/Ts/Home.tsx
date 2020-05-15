@@ -1,16 +1,25 @@
 import * as React from "react";
 
-export interface HomeProps { compiler: string; framework: string; }
+export interface Props { 
+    name: string;
+    level: number;
+ }
 
 
-export class Hello extends React.Component<HomeProps, {}> {
+export class Home extends React.Component<Props, {}> {
+
+    getExclamationMarks (numChars: number){
+        
+        return Array( numChars + 1).join('*')
+    }
+
     render() {
+        const { name, level} = this.props
+
         return (
             <div>
-                <h1>This is from {this.props.compiler} and {this.props.framework}!</h1>
+                <h1>This is from {name} and { this.getExclamationMarks(level) }</h1>
             </div>
         )
     }
 }
-
-

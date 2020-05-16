@@ -15,14 +15,7 @@ export default  class Home extends Component {
         this.closeProp = this.closeProp.bind(this);
         this.state = {
             materials: {},
-            showApply: false,
-            travel:[
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-                {'title': '标题', 'pic' : 'hot.png'},
-            ]
+            showApply: false
         }
     }
 

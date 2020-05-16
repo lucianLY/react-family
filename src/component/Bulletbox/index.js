@@ -4,7 +4,7 @@ import "./index.scss"
 export default class Bulletbox extends Component {
 
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     applyVisa(){
@@ -14,20 +14,18 @@ export default class Bulletbox extends Component {
     render () {
         const {type, country} = this.props
         const materials = this.props.materials
-        let passport = {}
-        if (materials.length > 0) {
-            passport = materials.materials.passport  
-            console.log( 'materials - ' + JSON.stringify(passport, 2) )
+        let passport = []
+        let photo = []
+        let other = []
+        if (type) { 
+            passport= materials.materials.passport
+            photo= materials.materials.photo
+            other= materials.materials.other
         }
 
         return (
             <div className={"bullet-box " + (this.props.type === true? 'show' : 'none')}>
                 <div className='container'>
-                    <div className="visa-sider">
-                        <div className="pic">
-
-                        </div>
-                    </div>
                     <div className="visa-article">
                         <div className="visa-material">
                             <div className="title">
@@ -45,13 +43,12 @@ export default class Bulletbox extends Component {
                                             <ul>
                                                 <li>需同时满足以下3点:</li>
                                                 { 
-                                                    // passport.map( ( item, index ) => {
-                                                    //     return (
-                                                    //         <li>{ item }</li>
-                                                    //     )
-                                                    // })
+                                                    passport.map( ( item, index ) => {
+                                                        return (
+                                                            <li key={index}>{index+1} 、{ item }</li>
+                                                        )
+                                                    })
                                                 }
-                                                
                                             </ul>
                                         </div>
                                     </td>
@@ -65,9 +62,13 @@ export default class Bulletbox extends Component {
                                         <div className="info">
                                             <ul>
                                                 <li>需同时满足以下3点:</li>
-                                                <li>1、近6个月内拍摄2寸(4.5cm×4.5cm或3.5cm×4.5cm)白底证件彩照1张(照片背后用铅笔写姓名);</li>
-                                                <li>2、不接收侧身照,不接收过胸照;</li>
-                                                <li>3、不接收自拍照,不接收戴帽子。</li>
+                                                { 
+                                                    photo.map( ( item, index ) => {
+                                                        return (
+                                                            <li key={index}>{index+1} 、{ item }</li>
+                                                        )
+                                                    })
+                                                }
                                             </ul>
                                         </div>
                                     </td>
@@ -80,11 +81,13 @@ export default class Bulletbox extends Component {
                                     <td>
                                         <div className="info">
                                             <ul>
-                                                <li>1、赴日申请表;</li>
-                                                <li>2、在职证明;</li>
-                                                <li>3、工签卡 ICARD 原件;</li>
-                                                <li>4、工签卡 ICARD 复印件;</li>
-                                                <li>5、存款证明 原件;</li>
+                                                { 
+                                                    other.map( ( item, index ) => {
+                                                        return (
+                                                            <li key={index}>{index+1} 、{ item }</li>
+                                                        )
+                                                    })
+                                                }
                                             </ul>
                                         </div>
                                     </td>

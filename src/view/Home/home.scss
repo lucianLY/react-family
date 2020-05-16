@@ -171,8 +171,9 @@
       }
       .hot-travel-map{
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         .item{
           width: 224px;
           height: 270px;
@@ -181,7 +182,8 @@
           border-radius: 20px;
           border-radius: 20px;
           padding: 8px;
-          margin-right: 20px;
+          margin-right: 16px;
+          margin-bottom: 15px;
           &:last-child(){
             margin-right: 0;
           }

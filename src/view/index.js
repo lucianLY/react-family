@@ -10,8 +10,7 @@ const Counter = Loadbble({
 const Home = Loadbble({
     loader: () => import('./Home/Home'),
     loading: Loading,
-    delay: 300,
-    timeout: 10000,
+    delay: 300
 })
 
 const UserInfo = Loadbble({
@@ -37,6 +36,7 @@ const AdminLogin = Loadbble({
     loading: Loading,
     delay: 300
 })
+
 export {
     Counter, Home, Navigtion, UserInfo, Visa, AdminLogin
 }

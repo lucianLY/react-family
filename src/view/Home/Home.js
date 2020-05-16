@@ -4,6 +4,7 @@ import VisaList from "./components/VisaList"
 import HomeStay from "./components/Homestay"
 import DayTrip from "./components/DayTrip"
 import Bulletbox from "component/Bulletbox"
+import {FullSlip,SlipItem} from "react-fullslip"
 import "./home.scss"
 
 export default  class Home extends Component {

@@ -1,6 +1,12 @@
 import Loadbble from "react-loadable"
 import Loading from "component/Loading"
 
+const TodoList = Loadbble({
+    loader: () => import('./TodoList/TodoList'),
+    loading: Loading,
+    delay: 300
+})
+
 const Counter = Loadbble({
     loader: () => import('./Counter/Counter'),
     loading: Loading,
@@ -38,5 +44,5 @@ const AdminLogin = Loadbble({
 })
 
 export {
-    Counter, Home, Navigtion, UserInfo, Visa, AdminLogin
+    Counter, Home, Navigtion, UserInfo, Visa, AdminLogin, TodoList
 }

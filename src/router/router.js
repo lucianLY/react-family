@@ -1,4 +1,4 @@
-import { Counter, Home, Visa, AdminLogin } from '../view'
+import { Counter, Home, Visa, AdminLogin, TodoList } from '../view'
 
 export  const  mainRouter = [
     {
@@ -25,5 +25,10 @@ export  const  mainRouter = [
         pathname: '/login',
         exact: false,
         component: AdminLogin
+    },
+    {
+        pathname: '/todolist',
+        exact: false,
+        component: TodoList
     },
 ]
